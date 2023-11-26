@@ -11,13 +11,13 @@ services:
         - UID=${UID:-1000}
         - GID=${GID:-1000}
       context: ./
-      dockerfile: ./proxies/Dockerfile
+      dockerfile: ./Dockerfile
     container_name: proxies
     user: ${UID:-1000}:${GID:-1000}
     restart: always
     working_dir: /var/www
     volumes:
-      - ./proxies:/var/www
+      - ./laravel:/var/www
       - ./xdebug/tmp:/xdebug/tmp
       - ./xdebug/coverage:/opt/phpstorm-coverage
     environment:
@@ -26,31 +26,7 @@ services:
       - "host.docker.internal:host-gateway"
     networks:
       - app-network
-  # app:
-  #   build:
-  #     # - separator means, a default value 1000
-  #     # running echo $UID and echo $GID. If you see values for both, great!
-  #     # If you don't, you'll need to export them by running the following command:
-  #     # export UID=$(id -u) && export GID=$(id -g)
-  #     args:
-  #       - UID=${UID:-1000}
-  #       - GID=${GID:-1000}
-  #     context: ./
-  #     dockerfile: ./parser/Dockerfile
-  #   container_name: app
-  #   user: ${UID:-1000}:${GID:-1000}
-  #   restart: always
-  #   working_dir: /var/www
-  #   volumes:
-  #     - ./parser:/var/www
-  #     - ./xdebug/tmp:/xdebug/tmp
-  #     - ./xdebug/coverage:/opt/phpstorm-coverage
-  #   environment:
-  #     XDEBUG_MODE: ${XDEBUG_MODE:-off}
-  #   extra_hosts:
-  #     - "host.docker.internal:host-gateway"
-  #   networks:
-  #     - app-network
+
   nginx:
     image: nginx:1.19-alpine
     container_name: nginx
@@ -58,7 +34,7 @@ services:
     ports:
       - "8000:80"
     volumes:
-      - ./proxies:/var/www
+      - ./laravel:/var/www
       - ./nginx:/etc/nginx/conf.d
       - ./nginx/logs:/var/log/nginx/
     networks:
