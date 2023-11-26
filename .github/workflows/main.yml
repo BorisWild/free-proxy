@@ -17,10 +17,4 @@ jobs:
           server-dir: ${{ secrets.ftp_folder }}
           local-dir: ${{ secrets.local_folder }}
           exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            **/tests/**
-            **/vendor/**
-            **/my_logs/**
             .env
