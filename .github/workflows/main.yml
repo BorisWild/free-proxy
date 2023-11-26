@@ -24,3 +24,5 @@ jobs:
           local-dir: ${{ secrets.local_folder }}
           exclude: |
             .env
+            **/node_modules/**
+            
