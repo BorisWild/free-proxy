@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class ProxyBestModel extends Model
 {
     protected $table = 'st_proxy_best';
-
+    protected $primaryKey = 'proxy_id';
     use HasFactory;
 }
