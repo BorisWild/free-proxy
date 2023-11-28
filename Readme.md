@@ -1,5 +1,3 @@
-- Demo: [http://free-proxy.inc.moe/](http://free-proxy.inc.moe/)
-
 **Development environment**
 
 In the terminal, we'll first have to check if environment variables exist by running:
@@ -18,7 +16,6 @@ Then, all you have to do is build and bring up your containers like usual!
 Enter the app container `sudo docker exec -it app bash`.
 
 Then run in laravel container `composer install`.
-These are the only dependencies we need.
-Make config `.env`.
+Make `.env`.
 
 [http://localhost:8000/](http://localhost:8000/)
