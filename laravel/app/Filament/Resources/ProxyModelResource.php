@@ -9,6 +9,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
+use Filament\Tables\Actions\Position;
 
 class ProxyModelResource extends Resource
 {
@@ -18,11 +19,15 @@ class ProxyModelResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-public static function getNavigationBadge(): ?string
-{
-    return static::getModel()::count();
-}
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
 
+    protected function getTableActionsPosition(): ?string
+    {
+        return Position::BeforeCells;
+    }
 
     public static function form(Form $form): Form
     {
