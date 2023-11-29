@@ -24,10 +24,7 @@ class ProxyModelResource extends Resource
         return static::getModel()::count();
     }
 
-    protected function getTableActionsPosition(): ?string
-    {
-        return Position::BeforeCells;
-    }
+    
 
     public static function form(Form $form): Form
     {
@@ -55,19 +52,19 @@ class ProxyModelResource extends Resource
                     ->searchable()
                     ,
                 TextColumn::make('proxy_code_check')
-                    ->toggleable(isToggledHiddenByDefault: false)
+                    ->toggleable(isToggledHiddenByDefault: true)
                     ->sortable()
                     ,
                 TextColumn::make('proxy_del')
-                    ->toggleable(isToggledHiddenByDefault: false)
+                    ->toggleable(isToggledHiddenByDefault: true)
                     ->sortable()
                     ,
                 TextColumn::make('proxy_timer_check')
-                    ->toggleable(isToggledHiddenByDefault: false)
+                    ->toggleable(isToggledHiddenByDefault: true)
                     ->sortable()
                     ,
                 TextColumn::make('proxy_timercon_check')
-                    ->toggleable(isToggledHiddenByDefault: false)
+                    ->toggleable(isToggledHiddenByDefault: true)
                     ->sortable()
                     ,
                 TextColumn::make('proxy_last_check')
