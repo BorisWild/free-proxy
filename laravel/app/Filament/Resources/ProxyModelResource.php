@@ -40,7 +40,7 @@ public static function getNavigationBadge(): ?string
         return $table
             ->columns([
                 TextColumn::make('proxy_id')
-                    ->toggleable(isToggledHiddenByDefault: false),
+                    ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('proxy_ip')
                     ->toggleable(isToggledHiddenByDefault: false)
                     ->searchable()
