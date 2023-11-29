@@ -9,7 +9,7 @@ class ProxyBestModel extends Model
 {
     use HasFactory;
     
-    protected string $table = 'st_proxy_best';
-    protected string $primaryKey = 'proxy_ip';
+    protected $table = 'st_proxy_best';
+    protected $primaryKey = 'proxy_ip';
     
 }
