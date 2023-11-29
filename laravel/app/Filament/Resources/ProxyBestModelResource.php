@@ -10,6 +10,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
+use Filament\Tables\Actions\Position;
 
 class ProxyBestModelResource extends Resource
 {
@@ -19,11 +20,14 @@ class ProxyBestModelResource extends Resource
 
     protected static ?string $navigationLabel = 'Checked';
 
-
-public static function getNavigationBadge(): ?string
-{
-    return static::getModel()::count();
-}
+    protected function getTableActionsPosition(): ?string
+    {
+        return Position::BeforeCells;
+    }
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
 
     public static function form(Form $form): Form
     {
