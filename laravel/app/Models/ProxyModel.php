@@ -7,7 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class ProxyModel extends Model
 {
-    protected $table = 'st_proxy_list';
-    protected $primaryKey = 'proxy_id';
     use HasFactory;
+    
+    protected $table = 'st_proxy_list';
+    protected $primaryKey = 'proxy_ip';
+    
 }
