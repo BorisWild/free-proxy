@@ -11,5 +11,5 @@ class ProxyBestModel extends Model
     
     protected $table = 'st_proxy_best';
     protected $primaryKey = 'proxy_ip';
-    
+    protected $guarded=[];
 }
