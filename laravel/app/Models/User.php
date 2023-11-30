@@ -9,10 +9,11 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, HasUuids;
 
     /**
      * The attributes that are mass assignable.
@@ -49,5 +50,10 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         //return str_ends_with($this->email, '@yourdomain.com') && $this->hasVerifiedEmail();
         return true;
+    }
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
     }
 }

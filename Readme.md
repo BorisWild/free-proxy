@@ -19,3 +19,6 @@ Then run in laravel container `composer install`.
 Make `.env`.
 
 [http://localhost:8000/](http://localhost:8000/)
+
+Login / Pass
+test@test.com / test@test.com

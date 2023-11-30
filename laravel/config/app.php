@@ -25,7 +25,7 @@ return [
     |
     | This value determines the "environment" your application is currently
     | running in. This may determine how you prefer to configure various
-    | services the application utilizes. Set this in your ".env" file.
+    | services the application utilizes. Set this in your ".env.local" file.
     |
     */
 
@@ -186,4 +186,13 @@ return [
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 
+
+    /*
+   |--------------------------------------------------------------------------
+   | Public folder
+   |--------------------------------------------------------------------------
+   |
+   */
+
+    'public_folder' => env('PUBLIC_FOLDER', 'public'),
 ];

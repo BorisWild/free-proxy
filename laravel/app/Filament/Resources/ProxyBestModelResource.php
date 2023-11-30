@@ -15,15 +15,11 @@ use Filament\Tables\Actions\Position;
 class ProxyBestModelResource extends Resource
 {
     protected static ?string $model = ProxyBestModel::class;
-
     protected static ?string $navigationIcon = 'heroicon-o-check-circle';
 
     protected static ?string $navigationLabel = 'Checked';
 
-    protected function getTableActionsPosition(): ?string
-    {
-        return Position::BeforeCells;
-    }
+
     public static function getNavigationBadge(): ?string
     {
         return static::getModel()::count();

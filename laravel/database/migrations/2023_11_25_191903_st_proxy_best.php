@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    private string $tableName = 'st_proxy_best_';
+    private string $tableName = 'st_proxy_best';
     /**
      * Run the migrations.
      */

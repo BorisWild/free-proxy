@@ -16,7 +16,7 @@ $app = new Illuminate\Foundation\Application(
 );
 
 
-$app->usePublicPath($app->basePath('www'));
+$app->usePublicPath($app->basePath($_ENV['PUBLIC_FOLDER'] ?? 'public'));
 
 /*
 |--------------------------------------------------------------------------

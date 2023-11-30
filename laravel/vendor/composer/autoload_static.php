@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitb29fc6008fe14e880ea8e0f6c57c46b5
+class ComposerStaticInit998f6bfb94a1a130201a32e19f551c90
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -20,7 +20,6 @@ class ComposerStaticInitb29fc6008fe14e880ea8e0f6c57c46b5
         '40275907c8566c390185147049ef6e5d' => __DIR__ . '/..' . '/livewire/livewire/src/helpers.php',
         '2c620c99f96a2b964346b45a4d1d1e64' => __DIR__ . '/..' . '/spatie/invade/src/functions.php',
         'e125f489d647ae664b0af7b573079de7' => __DIR__ . '/..' . '/filament/support/src/helpers.php',
-        'b69d5f1f95cd1ed438c038b6cbcc45b5' => __DIR__ . '/..' . '/filament/notifications/src/Testing/Autoload.php',
         '9e4824c5afbdc1482b6025ce3d4dfde8' => __DIR__ . '/..' . '/league/csv/src/functions_include.php',
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
@@ -29,6 +28,7 @@ class ComposerStaticInitb29fc6008fe14e880ea8e0f6c57c46b5
         '9720327d09ed9a4ba00c9b5071b71c7d' => __DIR__ . '/..' . '/danharrin/date-format-converter/src/standards.php',
         '2ad94ea6f6f6013119e9abcf4e302a08' => __DIR__ . '/..' . '/filament/forms/src/helpers.php',
         '3bd81c9b8fcc150b69d8b63b4d2ccf23' => __DIR__ . '/..' . '/spatie/flare-client-php/src/helpers.php',
+        'b69d5f1f95cd1ed438c038b6cbcc45b5' => __DIR__ . '/..' . '/filament/notifications/src/Testing/Autoload.php',
         '35a6ad97d21e794e7e22a17d806652e4' => __DIR__ . '/..' . '/nunomaduro/termwind/src/Functions.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         '09f6b20656683369174dd6fa83b7e5fb' => __DIR__ . '/..' . '/symfony/polyfill-uuid/bootstrap.php',
@@ -699,6 +699,8 @@ class ComposerStaticInitb29fc6008fe14e880ea8e0f6c57c46b5
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\ValidateSignature' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidateSignature.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Models\\ProductAttachment' => __DIR__ . '/../..' . '/app/Models/ProductAttachment.php',
+        'App\\Models\\ProductModel' => __DIR__ . '/../..' . '/app/Models/ProductModel.php',
         'App\\Models\\ProxyBestModel' => __DIR__ . '/../..' . '/app/Models/ProxyBestModel.php',
         'App\\Models\\ProxyModel' => __DIR__ . '/../..' . '/app/Models/ProxyModel.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
@@ -834,8 +836,12 @@ class ComposerStaticInitb29fc6008fe14e880ea8e0f6c57c46b5
         'DanHarrin\\DateFormatConverter\\Converter' => __DIR__ . '/..' . '/danharrin/date-format-converter/src/Converter.php',
         'DanHarrin\\LivewireRateLimiting\\Exceptions\\TooManyRequestsException' => __DIR__ . '/..' . '/danharrin/livewire-rate-limiting/src/Exceptions/TooManyRequestsException.php',
         'DanHarrin\\LivewireRateLimiting\\WithRateLimiting' => __DIR__ . '/..' . '/danharrin/livewire-rate-limiting/src/WithRateLimiting.php',
+        'Database\\Factories\\ProductAttachmentFactory' => __DIR__ . '/../..' . '/database/factories/ProductAttachmentFactory.php',
+        'Database\\Factories\\ProductModelFactory' => __DIR__ . '/../..' . '/database/factories/ProductModelFactory.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
+        'Database\\Seeders\\ProductAttachmentSeeder' => __DIR__ . '/../..' . '/database/seeders/ProductAttachmentSeeder.php',
+        'Database\\Seeders\\ProductModelSeeder' => __DIR__ . '/../..' . '/database/seeders/ProductModelSeeder.php',
         'DateError' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateError.php',
         'DateException' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateException.php',
         'DateInvalidOperationException' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateInvalidOperationException.php',
@@ -8186,9 +8192,9 @@ class ComposerStaticInitb29fc6008fe14e880ea8e0f6c57c46b5
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitb29fc6008fe14e880ea8e0f6c57c46b5::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitb29fc6008fe14e880ea8e0f6c57c46b5::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitb29fc6008fe14e880ea8e0f6c57c46b5::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit998f6bfb94a1a130201a32e19f551c90::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit998f6bfb94a1a130201a32e19f551c90::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit998f6bfb94a1a130201a32e19f551c90::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -1,6 +1,6 @@
 /.idea
 /.git
-.env
+laravel/.env.local
 .phpunit.result.cache
 /.run
 .vscode
