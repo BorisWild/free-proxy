@@ -11,6 +11,9 @@ class ProxyModel extends Model
     
     protected $table = 'st_proxy_list';
     protected $primaryKey = 'proxy_ip';
+
     protected $guarded=[];
+
+    public $timestamps = false;
     
 }
