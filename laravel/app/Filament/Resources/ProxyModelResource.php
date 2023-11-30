@@ -30,6 +30,8 @@ class ProxyModelResource extends Resource
     {
         return $form
             ->schema([
+                TextInput::make('proxy_id')
+                    ->maxLength(255),
                 TextInput::make('proxy_ip')
                     ->maxLength(255),
                 TextInput::make('proxy_port')
