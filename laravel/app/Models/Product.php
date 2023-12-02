@@ -10,14 +10,18 @@ class Product extends Model
 {
     use HasFactory, HasUuids;
 
-    protected $guarded=[];
+    protected $guarded = [];
 
-    public function user()
+    protected $casts = [
+        'is_public'=> 'boolean'
+    ];
+
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function attachments()
+    public function attachments(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(ProductAttachment::class);
     }

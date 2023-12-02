@@ -3,13 +3,15 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ProductResource\Pages;
-use App\Filament\Resources\ProductResource\RelationManagers;
 use App\Filament\Resources\ProductResource\RelationManagers\ProductAtachmentsRelationManager;
 use App\Models\Product;
-use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Filters\Filter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -27,24 +29,40 @@ class ProductResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('title')
-                    ->required(),
-                Forms\Components\Textarea::make('description')
+                TextInput::make('title')
                     ->required()
-                    ->columnSpanFull(),
-
+                    ,
+                Textarea::make('description')
+                    ->required()
+                    ,
+                FileUpload::make('thumbnail')
+                    ->image()
+                    ->imageEditor(),
             ]);
     }
 
     public static function table(Table $table): Table
     {
+
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('user.id')
+                    ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('id')
-                    ->searchable(),
+                    ->searchable()
+                    ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('title')
-                    ->searchable(),
-
+                    ->searchable()
+                    ->toggleable(isToggledHiddenByDefault: false),
+                Tables\Columns\TextColumn::make('thumbnail')
+                    ->toggleable(isToggledHiddenByDefault: true)
+                ,
+                Tables\Columns\TextColumn::make('is_public')
+                    ->toggleable(isToggledHiddenByDefault: true)
+                ,
+                Tables\Columns\TextColumn::make('description')
+                    ->searchable()
+                    ->toggleable(isToggledHiddenByDefault: false),
                 Tables\Columns\TextColumn::make('deleted_at')
                     ->dateTime()
                     ->sortable()
@@ -60,6 +78,8 @@ class ProductResource extends Resource
             ])
             ->filters([
                // Tables\Filters\TrashedFilter::make(),
+                Filter::make('my products')
+                    ->query(fn (Builder $query): Builder => $query->where('user_id', auth()->user()->id))
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

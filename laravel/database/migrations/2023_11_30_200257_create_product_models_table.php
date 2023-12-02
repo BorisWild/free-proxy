@@ -15,8 +15,16 @@ return new class extends Migration
             $table->uuid('id');
             $table->primary('id');
             $table->string('title');
-            $table->text('description');
+            $table->string('thumbnail')->nullable();
+            $table->text('description')->nullable();
+            $table->text('is_public')->default(1);
 
+            $table->uuid('user_id');
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
 
             $table->softDeletes();
             $table->timestamps();
