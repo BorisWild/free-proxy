@@ -11,11 +11,14 @@ RUN apt-get update && apt-get install -y \
     curl \
     zip \
     vim \
-    unzip
+    unzip \
+    intl \
 
 RUN curl --silent --show-error "https://getcomposer.org/installer" | php -- --install-dir=/usr/local/bin --filename=composer
 
-RUN docker-php-ext-install pdo pdo_mysql
+RUN apt-get install -y libicu-dev # required dependency for intl
+
+RUN docker-php-ext-install pdo pdo_mysql intl
 
 RUN pecl install xdebug \
     && docker-php-ext-enable xdebug
