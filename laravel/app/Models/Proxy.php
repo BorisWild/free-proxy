@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 
 class Proxy extends Model
 {
-    use HasFactory,HasUuids;
+    use HasFactory;
     
     protected $table = 'st_proxy_list';
     
