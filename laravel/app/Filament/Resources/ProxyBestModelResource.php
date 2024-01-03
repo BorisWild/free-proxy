@@ -3,7 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ProxyBestModelResource\Pages;
-use App\Models\ProxyBestModel;
+use App\Models\ProxyBest;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -14,7 +14,7 @@ use Filament\Tables\Actions\Position;
 
 class ProxyBestModelResource extends Resource
 {
-    protected static ?string $model = ProxyBestModel::class;
+    protected static ?string $model = ProxyBest::class;
     protected static ?string $navigationIcon = 'heroicon-o-check-circle';
 
     protected static ?string $navigationLabel = 'Checked';

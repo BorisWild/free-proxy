@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ProxyBestModel extends Model
+class ProxyBest extends Model
 {
     use HasFactory;
 

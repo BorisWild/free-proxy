@@ -2,7 +2,7 @@
 
 namespace App\Policies;
 
-use App\Models\ProxyModel;
+use App\Models\Proxy;
 use App\Models\User;
 
 
@@ -13,15 +13,15 @@ class ProxyPolicy
      */
     public function viewAny(User $user): bool
     {
-        return false;
+        return true;
     }
 
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, ProxyModel $product): bool
+    public function view(User $user, Proxy $product): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -35,7 +35,7 @@ class ProxyPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, ProxyModel $product): bool
+    public function update(User $user, Proxy $product): bool
     {
         return $user->email==='boriswild@gmail.com';
     }
@@ -43,7 +43,7 @@ class ProxyPolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, ProxyModel $product): bool
+    public function delete(User $user, Proxy $product): bool
     {
         return $user->email==='boriswild@gmail.com';
     }
@@ -51,7 +51,7 @@ class ProxyPolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, ProxyModel $product): bool
+    public function restore(User $user, Proxy $product): bool
     {
         return true;
     }
@@ -59,7 +59,7 @@ class ProxyPolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, ProxyModel $product): bool
+    public function forceDelete(User $user, Proxy $product): bool
     {
         return false;
     }

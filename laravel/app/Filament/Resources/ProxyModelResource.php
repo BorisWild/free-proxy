@@ -2,7 +2,7 @@
 
 namespace App\Filament\Resources;
 
-use App\Models\ProxyModel;
+use App\Models\Proxy;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -13,7 +13,7 @@ use Filament\Tables\Actions\Position;
 
 class ProxyModelResource extends Resource
 {
-    protected static ?string $model = ProxyModel::class;
+    protected static ?string $model = Proxy::class;
 
     protected static ?string $navigationLabel = 'Queue';
 
