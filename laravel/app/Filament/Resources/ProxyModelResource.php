@@ -34,6 +34,10 @@ class ProxyModelResource extends Resource
                     ->maxLength(255),
                 TextInput::make('proxy_ip')
                     ->maxLength(255),
+                TextInput::make('proxy_checks')
+                    ->maxLength(255),
+                TextInput::make('proxy_del')
+                    ->maxLength(255),
                 TextInput::make('proxy_port')
                     ->maxLength(10),
             ]);
@@ -112,4 +116,6 @@ class ProxyModelResource extends Resource
             'edit' => \App\Filament\Resources\ProxyModelResource\Pages\EditProxyModel::route('/{record}/edit'),
         ];
     }
+
+
 }

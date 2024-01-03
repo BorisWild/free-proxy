@@ -47,7 +47,13 @@ class ProxyBestPolicy
     {
         return $user->email==='boriswild@gmail.com';
     }
-
+  /**
+     * Determine whether the user can delete the model.
+     */
+    public function deleteAny(User $user): bool
+    {
+        return $user->email==='boriswild@gmail.com';
+    }
     /**
      * Determine whether the user can restore the model.
      */
@@ -60,6 +66,14 @@ class ProxyBestPolicy
      * Determine whether the user can permanently delete the model.
      */
     public function forceDelete(User $user, ProxyBest $product): bool
+    {
+        return false;
+    }
+
+     /**
+     * Determine whether the user can permanently delete the model.
+     */
+    public function forceDeleteAny(User $user): bool
     {
         return false;
     }
