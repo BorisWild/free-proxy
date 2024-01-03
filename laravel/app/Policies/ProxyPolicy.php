@@ -13,7 +13,7 @@ class ProxyPolicy
      */
     public function viewAny(User $user): bool
     {
-        return true;
+        return false;
     }
 
     /**
@@ -21,7 +21,7 @@ class ProxyPolicy
      */
     public function view(User $user, ProxyModel $product): bool
     {
-        return true;
+        return false;
     }
 
     /**
