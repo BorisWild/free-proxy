@@ -15,7 +15,9 @@ return new class extends Migration
         if (Schema::hasTable($this->tableName)) { return; }
 
         Schema::create($this->tableName, function (Blueprint $table) {
-            $table->id('proxy_id');
+            $table->string('proxy_id');
+            $table->primary('proxy_id');
+
             $table->string('proxy_ip')->nullable();
             $table->unsignedSmallInteger('proxy_port')->nullable();
             $table->unsignedSmallInteger('proxy_code_check')->nullable();

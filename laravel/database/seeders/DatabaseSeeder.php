@@ -26,14 +26,14 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Test User2',
             'email' => 'test2@test.com',
-            'password' => Hash::make('test@test.com'),
+            'password' => Hash::make('test2@test.com'),
             'email_verified_at'=>now()
         ]);
 
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'admin@admin.com',
-            'password' => Hash::make('test@test.com'),
+            'password' => Hash::make('admin@admin.com'),
             'email_verified_at'=>now()
         ]);
     }

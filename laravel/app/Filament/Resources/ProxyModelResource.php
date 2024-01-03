@@ -41,10 +41,12 @@ class ProxyModelResource extends Resource
 
     public static function table(Table $table): Table
     {
+        
         return $table
             ->columns([
                 TextColumn::make('proxy_id')
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ,
                 TextColumn::make('proxy_ip')
                     ->toggleable(isToggledHiddenByDefault: false)
                     ->searchable()
@@ -54,6 +56,10 @@ class ProxyModelResource extends Resource
                     ->searchable()
                     ,
                 TextColumn::make('proxy_code_check')
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->sortable()
+                    ,
+                TextColumn::make('proxy_checks')
                     ->toggleable(isToggledHiddenByDefault: true)
                     ->sortable()
                     ,

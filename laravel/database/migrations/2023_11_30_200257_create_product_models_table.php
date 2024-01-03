@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('thumbnail')->nullable();
             $table->text('description')->nullable();
-            $table->text('is_public')->default(1);
+            $table->unsignedTinyInteger('is_public')->default(1);
 
             $table->uuid('user_id');
             $table->foreign('user_id')
