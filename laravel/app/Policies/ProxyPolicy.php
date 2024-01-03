@@ -29,7 +29,7 @@ class ProxyPolicy
      */
     public function create(User $user): bool
     {
-        return false;
+        return $user->email==='boriswild@gmail.com';
     }
 
     /**
